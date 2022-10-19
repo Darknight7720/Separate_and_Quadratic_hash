@@ -74,6 +74,7 @@ int SearchKey(int k, HTable *ht)
 
 void	Insert(int k, HTable *ht)
 {
+	// printf("%d\n", k);
 	int	pos = SearchKey(k, ht);
 	if (ht->t[pos].info != Legi)
 	{
@@ -100,19 +101,12 @@ void	Display(HTable *ht)
 {
 	int i = 0;
 	while(i < ht->s)
-	{
-		int	value = ht->t[i].e;
-		if(!value)
-			printf("Position : %d Element : NULL\n", i + 1);
-		else
-			printf("Position %d Element: %d\n", i + 1, value);
-		i++;
-	}
+		ht->t[i].e == 0 ? printf("Position : %d Element : NULL\n", i++) : printf("Position : %d Element : %d\n", i++, ht->t[i].e);
 }
 
 int	main(int argc, char *argv[])
 {
-	system("cls");
+	system("cls || clear || clear");
 	int	select,pos, count = 0;
 	char	*inp;
 	HTable *ht;
@@ -134,13 +128,14 @@ int	main(int argc, char *argv[])
 		select = atoi(inp);
 		free(inp);
 		// printf("%d\n", select);
+		system("cls || clear");
 		switch(select){
 			case 1:
 				printf("Enter size of the Hash table : ");
 				cin >> s;
 				if (s > INT_MAX)
 				{
-					system("cls");
+					system("cls || clear");
 					printf("Too big size. Try again.\n");
 					continue;
 				}
@@ -152,7 +147,7 @@ int	main(int argc, char *argv[])
 				}
 				if (nextPrime(s) < T_S)
 				{
-					system("cls");
+					system("cls || clear");
 					printf("Size of Hash Table : %zu\n", nextPrime(s));
 					printf("Initialize fail you must initialize at least %d\n", T_S);
 					count = 0;
@@ -162,7 +157,7 @@ int	main(int argc, char *argv[])
 			case 2:
 				if (count == 0)
 				{
-					system("cls");
+					system("cls || clear");
 					printf("You must initialize your table first\n");
 					continue;
 				}
@@ -174,12 +169,13 @@ int	main(int argc, char *argv[])
 				printf("Enter element to be insert : ");
 				cin >> v;
 				Insert(v, ht);
+				Display(ht);
 				i++;
 			break;
 			case 3:
 				if (count == 0)
 				{
-					system("cls");
+					system("cls || clear");
 					printf("You must initialize your table first\n");
 					continue;
 				}
@@ -188,23 +184,24 @@ int	main(int argc, char *argv[])
 			case 4:
 				if (count == 0)
 				{
-					system("cls");
+					system("cls || clear");
 					printf("You must initialize your table first\n");
 					continue;
 				}
 				ht = Rehash(ht);
 			break;
 			case 5:
-				system("cls");
+				system("cls || clear || clear");
 				printf("=========================================\n");
-				printf("||             Created by              ||\n");
-				printf("||   1. Chayanon Sutrak 6430250024     ||\n");
-				printf("||  2. Nathadith Luangon 6430250032    ||\n");
-				printf("|| 3. Bhurinatha Kamolhansa 6430250270 ||\n");
+				printf("||             Created by               ||\n");
+				printf("||   1. Chayanon Sutrak 6430250024      ||\n");
+				printf("||  2. Nathadith Luangon 6430250032     ||\n");
+				printf("|| 3. Bhurinatha Kamolhansa 6430250270  ||\n");
+				printf("|| 4. Songpon    Bumrungkool 6430250075 ||\n");
 				printf("=========================================\n");
 				return (0);
 			default:
-				system("cls");
+				system("cls || clear || clear");
 				printf("Your choice is invalid.\n");
 		}
 	}

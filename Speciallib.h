@@ -9,9 +9,12 @@
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 10
 #endif
-#include <list>
-#include <stdlib.h>
-#include <stdio.h>
+# include <list>
+# include <stdlib.h>
+# include <stdio.h>
+# include <climits>
+# include <strings.h>
+# include <unistd.h>
 
 enum EntryType{
     Legi,

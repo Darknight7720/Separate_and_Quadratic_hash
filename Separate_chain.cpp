@@ -66,13 +66,14 @@ int	main(int argc, char *argv[])
 	int	k = 0;
 	if (argc == 1)
 	{
-		system("cls");
+		system("cls || clear");
 		printf("No value plase try again.\n");
 		printf("=========================================\n");
-		printf("||             Created by              ||\n");
-		printf("||   1. Chayanon Sutrak 6430250024     ||\n");
-		printf("||  2. Nathadith Luangon 6430250032    ||\n");
-		printf("|| 3. Bhurinatha Kamolhansa 6430250270 ||\n");
+		printf("||             Created by               ||\n");
+		printf("||   1. Chayanon Sutrak 6430250024      ||\n");
+		printf("||  2. Nathadith Luangon 6430250032     ||\n");
+		printf("|| 3. Bhurinatha Kamolhansa 6430250270  ||\n");
+		printf("|| 4. Songpon    Bumrungkool 6430250075 ||\n");
 		printf("=========================================\n");
 		return (0);
 	}
