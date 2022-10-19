@@ -74,7 +74,6 @@ int SearchKey(int k, HTable *ht)
 
 void	Insert(int k, HTable *ht)
 {
-	// printf("%d\n", k);
 	int	pos = SearchKey(k, ht);
 	if (ht->t[pos].info != Legi)
 	{
@@ -127,7 +126,6 @@ int	main(int argc, char *argv[])
 		cin >> inp;
 		select = atoi(inp);
 		free(inp);
-		// printf("%d\n", select);
 		system("cls || clear");
 		switch(select){
 			case 1:

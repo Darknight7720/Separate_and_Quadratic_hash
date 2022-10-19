@@ -11,7 +11,6 @@ class Hash{
 		void	deleteItem(int key);
 		int		hashFunction(int x)
 		{
-			// printf("Test = %d\n", x);
 			return (x % BUCKET);
 		}
 		void	displayHash();
@@ -19,7 +18,6 @@ class Hash{
 
 Hash::Hash(int b)
 {
-	// printf("Test  = %d\n", b);
 	this->BUCKET = b;
 	table = new list < int > [BUCKET];
 }
@@ -27,8 +25,6 @@ Hash::Hash(int b)
 void	Hash::insertItem(int key)
 {
 	int	index = hashFunction(key);
-	// printf("ID = %d\nKEY = %d\n", index, key);
-	// can't put 1 bc push_back problem
 	table[index].push_back(key);
 }
 
@@ -52,7 +48,6 @@ void	Hash::displayHash()
 		printf("%d", i);
 		for (int x:table[i])
 		{
-			// printf("%d\n", x);
 			cout << " --> " << x;
 		}
 		cout << endl;
